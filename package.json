@@ -1,41 +1,30 @@
 {
-  "name": "ReLive",
-  "version": "0.0.1",
-  "description": "test",
-  "private":"true",
+  "name": "reactls",
+  "version": "0.0.2",
+  "description": "react plugin",
   "author": "sakana",
+  "main":"index.js",
   "homepage": "https://github.com/sakanabiscuit",
-  "license": "ISC",
+  "license": "MIT",
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sakanabiscuit/melon.git"
+    "url": "git://github.com/sakanabiscuit/lsReact.git"
   },
   "bugs": {
-    "url": "https://github.com/sakanabiscuit/melon/issues"
-  },
-  "scripts": {
-    "start": "node app.js",
-    "test": "broccoli serve"
+    "url": "https://github.com/sakanabiscuit/lsReact/issues"
   },
   "dependencies": {
-    "react": "^0.14.2",
-    "react-dom": "^0.14.2"
+    "react": "^0.14.2"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^3.1.0",
+    "react-dom": "^0.14.2",
     "broccoli": "^0.16.8",
-    "broccoli-autoprefixer": "^4.0.0",
-    "broccoli-jade": "^1.1.0",
     "broccoli-merge-trees": "^0.2.3",
+    "broccoli-jade": "^1.1.0",
+    "broccoli-autoprefixer": "^4.0.0",
     "broccoli-stylus": "^3.0.0",
     "broccoli-webpack-cached": "^0.1.3",
-    "css-loader": "^0.19.0",
-    "livescript": "^1.4.0",
-    "livescript-loader": "^0.1.3",
-    "style-loader": "^0.12.4",
-    "stylus": "^0.52.4",
-    "stylus-loader": "^1.3.1",
-    "webpack": "^1.12.2"
+    "livescript-loader": "^0.1.3"
   }
 }

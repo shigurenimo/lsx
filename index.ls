@@ -14,6 +14,8 @@ process = ->
     return a
 
 export
+    React:React
+
     Live:class extends React.Component implements React.DOM
 
     init:(component) ->
@@ -343,26 +345,83 @@ export
         React.DOM.thead
         .apply @, process arguments
     time: ->
-        React.DOM.time.apply
+        React.DOM.time
         .apply @, process arguments
     title: ->
-        React.DOM.title.apply
+        React.DOM.title
         .apply @, process arguments
     tr: ->
-        React.DOM.tr.apply
+        React.DOM.tr
         .apply @, process arguments
     track: ->
-        React.DOM.track.apply
+        React.DOM.track
         .apply @, process arguments
     u: ->
-        React.DOM.u.apply
+        React.DOM.u
         .apply @, process arguments
     ul: ->
-        React.DOM.ul.apply
+        React.DOM.ul
         .apply @, process arguments
     video: ->
-        React.DOM.video.apply
+        React.DOM.video
         .apply @, process arguments
     wbr: ->
-        React.DOM.wbr.apply
+        React.DOM.wbr
+        .apply @, process arguments
+
+    # svg
+
+    circle: ->
+        React.DOM.circle
+        .apply @, process arguments
+    clipPath: ->
+        React.DOM.clipPath
+        .apply @, process arguments
+    defs: ->
+        React.DOM.defs
+        .apply @, process arguments
+    ellipse: ->
+        React.DOM.ellipse
+        .apply @, process arguments
+    g: ->
+        React.DOM.g
+        .apply @, process arguments
+    line: ->
+        React.DOM.line
+        .apply @, process arguments
+    linearGradient: ->
+        React.DOM.linearGradient
+        .apply @, process arguments
+    mask: ->
+        React.DOM.mask
+        .apply @, process arguments
+    path: ->
+        React.DOM.path
+        .apply @, process arguments
+    pattern: ->
+        React.DOM.pattern
+        .apply @, process arguments
+    polygon: ->
+        React.DOM.polygon
+        .apply @, process arguments
+    polyline: ->
+        React.DOM.polyline
+        .apply @, process arguments
+    radialGradient: ->
+        React.DOM.radialGradient
+        .apply @, process arguments
+    rect: ->
+        React.DOM.rect
+        .apply @, process arguments
+    stop: ->
+        React.DOM.stop
+        .apply @, process arguments
+    svg: ->
+        React.DOM.svg
+        .apply @, process arguments
+    text: ->
+        React.DOM.text
+        .apply @, process arguments
+    tspan: ->
+        React.DOM.tspan
         .apply @, process arguments

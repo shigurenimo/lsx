@@ -1,21 +1,21 @@
-require! \react-dom           : ReactDOM
-require! \./React-Live-Plugin : { Live, init, type, div, a, p }
+require! \react-dom  : ReactDOM
+require! \../../index.ls : { Live, init, type, div, a, p }
 
 test-div = init class extends Live
 
     (props) !->
         super props
         @state =
-            count: []
+            num: []
 
     @propTypes =
         test:type.string
 
     @defaultProps =
-        test:\defaultID
+        test: 'defaultID'
 
     render: ->
-        div [id:@props.test],
+        div [ class-name: @props.test ],
             p [] @props.children
 
 Main = init class extends Live
@@ -24,11 +24,11 @@ Main = init class extends Live
             div [] \r
             div [],
                 div [] \hello
-                test-div [test:"s"],
+                test-div [ test:'s' ],
                     a []
                     a [] \world
             div [ class-name: \q ]
-            div [ class-name: \fff ] \ss
+            div [ class-name: \ff ] \s
 
 window.onload = ->
     \app |> document.createElement
