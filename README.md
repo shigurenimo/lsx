@@ -1,4 +1,4 @@
-### [lsx - React plugin for LiveScript](https://github.com/sakanabiscuit/lsReact)
+### [lsx - React plugin for LiveScript](https://github.com/sakanabiscuit/lsx)
 
 ! This plugin is written LiveScript, you need to install LiveScript. LiveScript is a language which compiles to JavaScript.
 

@@ -1,18 +1,18 @@
 {
   "name": "lsx",
-  "version": "0.0.2",
-  "description": "react plugin",
+  "version": "0.0.3",
+  "description": "React plugin for LiveScript",
   "author": "sakana",
-  "main":"index.js",
+  "main": "index.js",
   "homepage": "https://github.com/sakanabiscuit",
   "license": "MIT",
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sakanabiscuit/lsReact.git"
+    "url": "git://github.com/sakanabiscuit/lsx.git"
   },
   "bugs": {
-    "url": "https://github.com/sakanabiscuit/lsReact/issues"
+    "url": "https://github.com/sakanabiscuit/lsx/issues"
   },
   "dependencies": {
     "react": "^0.14.2"
