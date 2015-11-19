@@ -1,11 +1,11 @@
-### [lsReact - React plugin for LiveScript](https://github.com/sakanabiscuit/lsReact)
+### [lsx - React plugin for LiveScript](https://github.com/sakanabiscuit/lsReact)
 
 ! This plugin is written LiveScript, you need to install LiveScript. LiveScript is a language which compiles to JavaScript.
 
 JSX(facebook) need compiler, but LiveScript is not usable together with JSX. This plugin make understandable and simple. This is sample.
 
     require! \react-dom : ReactDOM
-    require! ls-react   : { Live, init, div, a, p }
+    require! lsx : { Live, init, div, a, p }
 
     Main = init class extends Live
         render: ->
@@ -24,13 +24,13 @@ JSX(facebook) need compiler, but LiveScript is not usable together with JSX. Thi
 
 Have Node.js installed.
 
-    npm i -D lsReact
+    npm i -D lsx
 
 ### Usage
 
-1 first, you need import plugin "lsReact".
+1 import plugin "lsx".
 
-    require! ls-react   : { Live, init, type, div, a, p }
+    require! lsx : { Live, init, div, a, p }
 
 2 create class and bind. (example:Main)
 
@@ -68,8 +68,9 @@ nest component
         p [] \hello,world
 
     # <div>
-    #     <p></p>
+    #     <p />
     #     <p>hello,world</p>
+    # </div>
 
 set props and style, etc..
 
@@ -84,16 +85,15 @@ set props and style, etc..
     #      style = {
     #          height:200
     #          width:200
-    #      }>hello,world<div>
+    #      }>
+    #     hello,world
+    # <div>
 
-use original component
+use component and set prop-types
+
+    require! lsx : { Live, init, type, div }
 
     test-component = init class extends Live
-
-        (props) !->
-            super props
-            @state =
-                num: []
 
         @prop-types =
             test-class:type.string
@@ -110,10 +110,14 @@ use original component
             div [],
                 test-component [ test-class: \test ] \hello,world
 
-if use plain component
+use plain component
 
     Test-componet = React.createClass
         render: ->
             React.DOM.div null, 'hello,world'
 
     test-component = init Test-componet
+
+    ReactDOM.render do
+        test-componet []
+        \app |> document.querySelector
