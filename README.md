@@ -112,12 +112,12 @@ use component and set prop-types
 
 use plain component
 
-    Test-componet = React.createClass
+    Test-component = React.createClass
         render: ->
             React.DOM.div null, 'hello,world'
 
-    test-component = init Test-componet
+    test-component = init Test-component
 
     ReactDOM.render do
-        test-componet []
+        test-component []
         \app |> document.querySelector
