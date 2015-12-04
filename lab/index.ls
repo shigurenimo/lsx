@@ -1,7 +1,7 @@
-require! \react-dom  : ReactDOM
-require! \../../index.ls : { Live, init, type, div, a, p }
+require! \react-dom   : ReactDOM
+require! \../index.ls : { io, Component, type, div, a, p }
 
-test-div = init class extends Live
+test-div = io class extends Component
 
     (props) !->
         super props
@@ -18,7 +18,7 @@ test-div = init class extends Live
         div [ class-name: @props.test ],
             p [] @props.children
 
-Main = init class extends Live
+main = io do
     render: ->
         div [],
             div [] \r
@@ -34,5 +34,5 @@ window.onload = ->
     \app |> document.createElement
          |> document.body.appendChild
     ReactDOM.render do
-        Main []
+        main []
         \app |> document.querySelector

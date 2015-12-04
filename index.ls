@@ -16,9 +16,11 @@ process = ->
 export
     React:React
 
-    Live:class extends React.Component implements React.DOM
+    Component:React.Component
 
-    init:(component) ->
+    io:(component) ->
+        if typeof component is 'object'
+            component = React.createClass component
         -> React.createFactory component .apply @, process arguments
 
     type:
