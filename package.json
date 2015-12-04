@@ -1,9 +1,9 @@
 {
   "name": "lsx",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React plugin for LiveScript",
   "author": "sakana",
-  "main": "index.ls",
+  "main": "index.js",
   "scripts": {
     "package": "lsc -c package.json.ls",
     "test": "webpack-dev-server --colors --watch && open http://localhost:8080/webpack-dev-server/lab",
