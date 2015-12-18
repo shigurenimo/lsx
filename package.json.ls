@@ -1,12 +1,12 @@
 name:          'lsx'
-version:       '0.0.6'
+version:       '0.0.7'
 description:   'React plugin for LiveScript'
 author:        'sakana'
 main:          'index.js'
 scripts:
     'package': 'lsc -c package.json.ls'
-    'test':    'webpack-dev-server --colors --watch && open http://localhost:8080/webpack-dev-server/lab'
-    'product': 'webpack --progress --colors'
+    'test':    'killall -9 node ; webpack-dev-server --colors --watch & open http://localhost:8080/webpack-dev-server/lab'
+    'product': 'lsc -c index.ls'
 homepage:      'https://github.com/sakanabiscuit'
 license:       'MIT'
 readme:        'README.md'
@@ -17,7 +17,7 @@ bugs:
     url:       'https://github.com/sakanabiscuit/lsx/issues'
 dependencies:
     'react':             '^0.14.x'
-    'react-dom':         '^0.14.x'
 devDependencies:
     'livescript-loader': 'latest'
     'webpack':           'latest'
+    'react-dom':         '^0.14.x'

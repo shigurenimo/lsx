@@ -127,9 +127,6 @@ export
     dialog: ->
         React.DOM.dialog
         .apply @, process arguments
-    aside: ->
-        React.DOM.aside
-        .apply @, process arguments
     div: ->
         React.DOM.div
         .apply @, process arguments
@@ -229,6 +226,9 @@ export
     map: -> #!
         React.DOM.map
         .apply @, process arguments
+    mark: ->
+        React.DOM.mark
+        .apply @, process arguments
     menu: ->
         React.DOM.menu
         .apply @, process arguments
@@ -262,9 +262,6 @@ export
     output: ->
         React.DOM.output
         .apply @, process arguments
-    keypgen: ->
-        React.p.keygen
-        .apply @, process arguments
     p: ->
         React.DOM.p
         .apply @, process arguments
@@ -282,6 +279,9 @@ export
         .apply @, process arguments
     q: ->
         React.DOM.q
+        .apply @, process arguments
+    rp: ->
+        React.DOM.rp
         .apply @, process arguments
     rt: ->
         React.DOM.rt
@@ -309,6 +309,9 @@ export
         .apply @, process arguments
     source: ->
         React.DOM.source
+        .apply @, process arguments
+    span: ->
+        React.DOM.span
         .apply @, process arguments
     strong: ->
         React.DOM.strong
