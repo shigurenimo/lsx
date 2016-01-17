@@ -1,69 +1,69 @@
-### [lsx - React plugin for LiveScript](https://github.com/sakanabiscuit/lsx)
+### [lsx - LiveScript Extension](https://github.com/sakanabiscuit/lsx)
 
 ! This plugin is written LiveScript, you need to install LiveScript. LiveScript is a language which compiles to JavaScript.
 
-JSX(facebook) need compiler, but LiveScript is not usable together with JSX. This is sample.
+    { render } = require 'react-dom'
+    { createClass, div, a, p } = require 'lsx'
 
-    require! \react-dom : ReactDOM
-    require! lsx : { io, div, a, p }
+    main = createClass do
 
-    main = io do
-
-        render: ->
+        render : ->
             div [],
-                a [] \hello
-                p [] \world
+                a [] 'hello'
+                p [] 'world'
 
     window.onload = ->
 
-        \app |> document.createElement
-             |> document.body.appendChild
-        ReactDOM.render do
+        'app' |> document.createElement
+              |> document.body.appendChild
+        render do
             main []
-            \app |> document.querySelector
+            'app' |> document.querySelector
 
 Object Oriented Programming
 
-    require! lsx : { Le, Component, div, a, p }
+    { createClass, Component, div, a, p } = require 'lsx'
 
-    main = io class Main extends Component
-        render: ->
+    main = createClass class Main extends Component
+
+        render : ->
             div [],
-                a [] \hello
-                p [] \world
+                a [] 'hello'
+                p [] 'world'
 
 ### Installation
 
 Have Node.js installed.
 
-    npm i -D lsx
+    npm i lsx
 
 ### Usage
 
-1 import plugin "lsx".
+1 import plugin 'lsx'.
 
-    require! lsx : { io, div, a, p }
+    { createClass, div, a, p } = require 'lsx'
 
 2 create class and bind. (example:Main)
 
-    Main = io do
+    Main = createClass do
 
-        render: ->
+        render : ->
             div [],
-                p [] \hello
-                a [] \world
+                p [] 'hello'
+                a [] 'world'
 
 3 render.
 
-    ReactDOM.render do
+    { render } = require 'react-dom'
+    render do
         Main []
-        \app |> document.querySelector
+        'app' |> document.querySelector
 
 ### Function
 
 component
 
-    div [] \hello,world
+    div [] 'hello,world'
 
     # <div>hello,world</div>
 
@@ -77,7 +77,7 @@ nest component
 
     div [],
         p []
-        p [] \hello,world
+        p [] 'hello,world'
 
     # <div>
     #     <p />
@@ -86,11 +86,11 @@ nest component
 
 set props and style, etc..
 
-    div [ test-prop:\test
-        , onClick: @test-func
-        , style:
-          height: 200
-          width:  200 ] \hello,world
+    div [ test-prop : 'test'
+        , onClick : @test-func
+        , style :
+          height : 200
+          width : 200 ] 'hello,world'
 
     # <div test-prop = "test"
     #      onClick = {this.testFunc}
@@ -103,31 +103,40 @@ set props and style, etc..
 
 use component and set prop-types
 
-    test-component = io do
+    { createClass, type, div} = require 'lsx'
+
+    test-component = createClass do
 
         prop-types =
-            test-class: type.string
+            test-class : type.string
 
         get-default-props = ->
-            test-class: \default
+            test-class : 'default'
 
-        render: ->
+        render : ->
             div [ class-name: @props.test-class ] @props.children
 
-    Main = io do
+    Main = createClass do
 
         render: ->
             div [],
-                test-component [ test-class: \test ] \hello,world
+                test-component [ test-class: 'test' ] 'hello,world'
 
 use plain component
 
-    Test-component = React.createClass
-        render: ->
+    plain-component = React.createClass do
+        render : ->
             React.DOM.div null, 'hello,world'
 
-    test-component = io Test-component
+    component = createClass plain-component
 
     ReactDOM.render do
+        component []
+        'app' |> document.querySelector
+
+use with React.createClass
+
+    plain-component = React.createClass do
         test-component []
-        \app |> document.querySelector
+        render : ->
+            div [] 'hello,world'

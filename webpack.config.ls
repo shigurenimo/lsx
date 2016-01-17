@@ -1,12 +1,12 @@
 export
-    entry:
-        main: \./lab/index.ls
-    output:
-        filename: \./lab/index.js
-    module:
-        loaders: [
-            test: /\.ls$/
-            loader: \livescript
+    entry :
+        main : './test/index.ls'
+    output :
+        filename : './test/index.js'
+    module :
+        loaders : [
+            test : /\.ls$/
+            loader : 'livescript'
         ]
     resolve:
-        extensions: [ "", \.js , \.ls ]
+        extensions: [ '', '.js' , '.ls' ]
