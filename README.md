@@ -1,142 +1,168 @@
 ### [lsx - LiveScript Extension](https://github.com/sakanabiscuit/lsx)
 
-! This plugin is written LiveScript, you need to install LiveScript. LiveScript is a language which compiles to JavaScript.
+! This plugin is written [LiveScript](http://livescript.net/), you need to install LiveScript. LiveScript is a language which compiles to JavaScript.
 
-    { render } = require 'react-dom'
-    { createClass, div, a, p } = require 'lsx'
+```livescript
+{ render } = require 'react-dom'
+{ createClass, div, a, p } = require 'lsx'
 
-    main = createClass do
+main = createClass do
 
-        render : ->
-            div [],
-                a [] 'hello'
-                p [] 'world'
+    render : ->
+        div [],
+            a [] 'hello'
+            p [] 'world'
 
-    window.onload = ->
+window.onload = ->
 
-        'app' |> document.createElement
-              |> document.body.appendChild
-        render do
-            main []
-            'app' |> document.querySelector
+    'app' |> document.createElement
+          |> document.body.appendChild
+    render do
+        main []
+        'app' |> document.querySelector
+```
 
 Object Oriented Programming
 
-    { createClass, Component, div, a, p } = require 'lsx'
+```livescript
+{ createClass, Component, div, a, p } = require 'lsx'
 
-    main = createClass class Main extends Component
+main = createClass class Main extends Component
 
-        render : ->
-            div [],
-                a [] 'hello'
-                p [] 'world'
+    render : ->
+        div [],
+            a [] 'hello'
+            p [] 'world'
+```
 
 ### Installation
 
 Have Node.js installed.
 
-    npm i lsx
+```sh
+npm i lsx
+```
 
 ### Usage
 
 1 import plugin 'lsx'.
 
-    { createClass, div, a, p } = require 'lsx'
+```livescript
+{ createClass, div, a, p } = require 'lsx'
+```
 
 2 create class and bind. (example:Main)
 
-    Main = createClass do
+```livescript
+Main = createClass do
 
-        render : ->
-            div [],
-                p [] 'hello'
-                a [] 'world'
+    render : ->
+        div [],
+            p [] 'hello'
+            a [] 'world'
+```
 
 3 render.
 
-    { render } = require 'react-dom'
-    render do
-        Main []
-        'app' |> document.querySelector
+```livescript
+{ render } = require 'react-dom'
+render do
+    Main []
+    'app' |> document.querySelector
+```
 
 ### Function
 
 component
 
-    div [] 'hello,world'
+```livescript
+div [] 'hello,world'
 
-    # <div>hello,world</div>
+# <div>hello,world</div>
+```
 
 null contents component
 
-    div []
+```livescript
+div []
 
-    # <div />
+# <div />
+```
 
 nest component
 
-    div [],
-        p []
-        p [] 'hello,world'
+```livescript
+div [],
+    p []
+    p [] 'hello,world'
 
-    # <div>
-    #     <p />
-    #     <p>hello,world</p>
-    # </div>
+# <div>
+#     <p />
+#     <p>hello,world</p>
+# </div>
+```
 
 set props and style, etc..
 
-    div [ test-prop : 'test'
-        , onClick : @test-func
-        , style :
-          height : 200
-          width : 200 ] 'hello,world'
+```livescript
+div [ test-prop : 'test'
+    , onClick : @test-func
+    , style :
+      height : 200
+      width : 200 ] 'hello,world'
 
-    # <div test-prop = "test"
-    #      onClick = {this.testFunc}
-    #      style = {
-    #          height:200
-    #          width:200
-    #      }>
-    #     hello,world
-    # <div>
+# <div test-prop = "test"
+#      onClick = {this.testFunc}
+#      style = {
+#          height:200
+#          width:200
+#      }>
+#     hello,world
+# <div>
+```
 
 use component and set prop-types
 
-    { createClass, type, div} = require 'lsx'
+```livescript
+{ createClass, type, div } = require 'lsx'
 
-    test-component = createClass do
+test-component = createClass do
 
-        prop-types =
-            test-class : type.string
+    prop-types =
+        test-class : type.string
 
-        get-default-props = ->
-            test-class : 'default'
+    get-default-props = ->
+        test-class : 'default'
 
-        render : ->
-            div [ class-name: @props.test-class ] @props.children
+    render : ->
+        div [ class-name: @props.test-class ] @props.children
 
-    Main = createClass do
+Main = createClass do
 
-        render: ->
-            div [],
-                test-component [ test-class: 'test' ] 'hello,world'
+    render: ->
+        div [],
+            test-component [ test-class: 'test' ] 'hello,world'
+```
 
 use plain component
 
-    plain-component = React.createClass do
-        render : ->
-            React.DOM.div null, 'hello,world'
+```livescript
+plain-component = React.createClass do
+    render : ->
+        React.DOM.div null, 'hello,world'
 
-    component = createClass plain-component
+component = createClass plain-component
 
-    ReactDOM.render do
-        component []
-        'app' |> document.querySelector
+ReactDOM.render do
+    component []
+    'app' |> document.querySelector
+```
 
-use with React.createClass
+use with `React.createClass`
 
-    plain-component = React.createClass do
-        test-component []
-        render : ->
-            div [] 'hello,world'
+```livescript
+plain-component = React.createClass do
+    test-component []
+    render : ->
+        div [] 'hello,world'
+```
