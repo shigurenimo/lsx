@@ -1,7 +1,6 @@
 # [lsx - LiveScript Extension](https://github.com/sakanabiscuit/lsx)
 
-! This plugin is written LiveScript, you need to install LiveScript. 
-LiveScript is a language which compiles to JavaScript.
+! This plugin is written LiveScript, you need to install LiveScript.
 
     { render } = require 'react-dom'
     { createClass, div, a, p } = require 'lsx'

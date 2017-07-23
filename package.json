@@ -1,13 +1,13 @@
 {
   "name": "lsx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React plugin for LiveScript",
   "license": "CC0",
   "author": "uufish",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:uu-fish/lsx.git"
+    "url": "git@github.com:uufish/lsx.git"
   },
   "scripts": {
     "build": "lsc -c index.ls",
