@@ -1,10 +1,11 @@
-### [lsx - LiveScript Extension](https://github.com/sakanabiscuit/lsx)
+# [lsx - LiveScript Extension](https://github.com/sakanabiscuit/lsx)
 
 ! This plugin is written [LiveScript](http://livescript.net/), you need to install LiveScript. LiveScript is a language which compiles to JavaScript.
 
 ```livescript
 { render } = require 'react-dom'
 { createClass, div, a, p } = require 'lsx'
+
 
 main = createClass do
 
@@ -37,7 +38,7 @@ main = createClass class Main extends Component
 
 ### Installation
 
-Have Node.js installed.
+    yarn install lsx
 
 ```sh
 npm i lsx
@@ -71,7 +72,7 @@ render do
     'app' |> document.querySelector
 ```
 
-### Function
+# Function
 
 component
 
@@ -126,6 +127,7 @@ use component and set prop-types
 ```livescript
 { createClass, type, div } = require 'lsx'
 
+
 test-component = createClass do
 
     prop-types =
@@ -149,9 +151,11 @@ use plain component
 ```livescript
 plain-component = React.createClass do
     render : ->
+
         React.DOM.div null, 'hello,world'
 
 component = createClass plain-component
+
 
 ReactDOM.render do
     component []

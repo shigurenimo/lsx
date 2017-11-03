@@ -1,1 +1,14 @@
+# Node.js
 node_modules
+
+# PHPStorm
+.idea
+
+# macOS
+.DS_Store
+
+# other
+*.swp
+*.log
+*.zip
+*~
